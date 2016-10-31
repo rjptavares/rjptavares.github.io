@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="resumeApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>HTML5 CV</title>
+  <link rel="stylesheet" href="css/tether.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  
+  <script src="js/jquery.js"></script>
+  <script src="js/tether.js"></script>
+  <script src="js/bootstrap.js"></script>
+  
+  <link rel="stylesheet" href="css/normalize.min.css">
+  <link rel="stylesheet" href="css/styles.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Asap:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/flaticon.css">
+  <!-- AngularJS -->
+  <script src="js/angular.min.js"></script>
+
+</head>
+<body ng-controller="ResumeController as resumeCtrl">
+
+<!-- Menu -->
+<header>
+  <a href="#" class="menu">MENU</a>
+  <nav>
+    <a href="#bio" class="bio underline">Bio</a>
+    <a href="#education" class="education underline">Education</a>
+    <a href="#experience" class="experience underline">Experience</a>
+    <a href="#skills" class="skills underline">Skills</a>
+    <a href="#portfolio" class="portfolio underline">Portfolio</a>
+  </nav>
+</header>
+
+<!-- Bio section -->
+<section class="section" id="bio">
+  <div class="left">
+      <img id="picture" ng-src="images/default_profile.jpg" style="background-repeat: no-repeat; background-size: cover;" >
+  </div>
+
+  <div class="right">
+    <article>
+       <article>
+      <h1 id="name">MyResume</h1>
+      <p>Ricardo Jorge Palmiro Tavares, Sou uma pessoa que estou a iniciar na área de programação onde me encontro a tirar um curso de programação com aprendizagem de varias linguagens das quais devo realçar (C#, C++, Java, VB, Cobol, SQL, SQLServer).
+        </p>
+      <p>Sou um profissional disciplinado e rigoroso  com elevado sentido de responsabilidade. Tenho forte poder de counicação, elevada capacidades de aprendizagem e adoro trabalhar em equipa.  </p>
+      
+    </article>
+
+      <p ng-repeat="paragraph in resumeCtrl.resume.summary">
+        {{paragraph}}
+      </p>
+    </article>
+
+    <div id="contact-info">
+      <a class="flaticon-github" title="GitHub" ng-href="https://github.com/rjptavares/Tavares" ></a>
+
+      <a class="flaticon-linkedin" title="LinkedIn" ng-href="https://www.linkedin.com/in/ricardo-jorge-palmiro-tavares-006ab9b0?trk=nav_responsive_tab_profile_pic" ></a>
+
+      <a class="flaticon-email" title="rjt1980@gmail.com" data-toggle="tooltip" data-placement="bottom"  ></a>
+    </div>
+  </div>
+</section>
+
+<!-- Education Section -->
+<section class="section" id="education">
+  <h2 class="title education underline">Education</h2>
+  <div class="history">
+  <div class="entry">
+      <h3>
+        <span class="place">ISTEC - Instituto Superior de Tecnologias Avançadas</span>
+        <span class="time">2015</span>
+      </h3>
+      <p>Licenciatura em Inforática</p>
+    </div>
+     <div class="entry">
+      <h3>
+        <span class="place">IEFP - Curso de programação informática</span>
+        <span class="time">2015-2016</span>
+      </h3>
+      <p>Curso de programação informática dado pelo Instituto de Emprego e Formação Profissional</p>
+    </div>
+    <div class="entry">
+      <h3>
+        <span class="place">Escola Secundária Fernando Lopes Graça</span>
+        <span class="time">2002-2004</span>
+      </h3>
+      <p>12º ano foi terminado nesta escola no regime noturno</p>
+    </div>
+    <div class="entry">
+      <h3>
+        <span class="place">Escola Secundária Frei Gonçalo de Azevedo</span>
+        <span class="time">1994-1999</span>
+      </h3>
+    </div>
+  </div>
+</section>
+
+<!-- Experience Section -->
+<section class="section experience" id="experience">
+  <h2 class="title experience underline">Experience</h2>
+  <div class="history">
+      <div class="entry">
+      <h3>
+        <span class="place">Chefe de oficina, Peugeot/Mahindra Teixeira Duarte, Luanda (Angola)</span>
+        <span class="time">23/02/2014– 11/11/2014</span>
+      </h3>
+      <p>Atendimento e acompanhamento ao cliente.
+Verificação e acompanhamento de viaturas. Distribuição de trabalho de acordo com as capacidades de cada trabalhador.
+Abertura e conclusão de obras.
+Diagnóstico e reparação de avarias elétricas, eletrónicas e mecânicas. Conhecimento na área de mecatrónica.
+Relação direta com a sessão de peças de modo a eliminar falhas de material.
+</p>
+    </div>
+       <div class="entry">
+      <h3>
+        <span class="place">Técnico de Mecânica Auto CarFor, Mem Martins - Sintra (Portugal)</span>
+        <span class="time">05/2005–07/2013</span>
+      </h3>
+      <p>Conhecimento na área de mecatrónica.
+Reparação: motores, caixas de velocidades, direções elétricas e hidráulicas, sistemas de travões.
+Verificação e alinhamento de direções.
+Diagnóstico e reparação de avarias elétricas, eletrónicas e mecânicas. Conhecimento na área de mecatrónica.
+Atendimento e acompanhamento ao cliente.
+Verificação e acompanhamento de viaturas ao centro de inspeção.
+Capacidade de tutoria (como Técnico de Mecânico sénior, sendo responsável pela formação e indução de novos funcionários.
+</p>
+  </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section class="section" id="skills">
+  <h2 class="title skills underline">Skills</h2>
+    
+  <div class="category">
+    <h3>Programming Language:</h3>
+    <ul>
+      <li class="skill" data-level="1">
+        <h4>C++</h4>
+        <div class="bar"></div>
+      </li>
+      <li class="skill" data-level="2">
+        <h4>COBOL</h4>
+        <div class="bar"></div>
+      </li>
+      <li class="skill" data-level="4">
+        <h4>C#</h4>
+        <div class="bar"></div>
+      </li>
+      <li class="skill" data-level="7">
+        <h4>ANDROID</h4>
+        <div class="bar"></div>
+      </li>
+      <li class="skill" data-level="8">
+        <h4>HTML/CSS</h4>
+        <div class="bar"></div>
+      </li>
+      <li class="skill" data-level="10">
+        <h4>SQL SERVER</h4>
+        <div class="bar"></div>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="category">
+    <h3>Mechanics:</h3>
+    <ul>
+      <li class="skill" data-level="9">
+        <h4>Workshop Leader</h4>
+        <div class="bar"></div>
+      </li>
+      <li class="skill" data-level="10">
+        <h4>Diagnostic</h4>
+        <div class="bar"></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- Portfolio Section -->
+<section class="section" id="portfolio">
+  <h2 class="title portfolio underline">Portfolio</h2>
+  
+  <ul>
+   <li class="project">
+      <a href="#"><div class="img"></div></a>
+      <h4 class="title"><a href="#">Project Name</a></h4>
+    </li>
+    <li class="project">
+      <a href="#"><div class="img"></div></a>
+      <h4 class="title"><a href="#">Project Name</a></h4>
+    </li>
+    <li class="project">
+      <a href="#"><div class="img"></div></a>
+      <h4 class="title"><a href="#">Project Name</a></h4>
+    </li>
+    <li class="project">
+      <a href="#"><div class="img"></div></a>
+      <h4 class="title"><a href="#">Yet Another Project with a Long Name</a></h4>
+    </li> 
+  </ul>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>Bio background image:  <a href="https://www.flickr.com/photos/danielchodusov/15347878754/" target="blank">Barcelona #1.</a> by Daniel Chodusov.</p>
+  
+  <div>Profile icon made by <a href="http://www.flaticon.com/authors/bogdan-rosu" title="Bogdan Rosu">Bogdan Rosu</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
+  
+  <div>Icons made by <a href="http://www.flaticon.com/authors/yannick" title="Yannick">Yannick</a>, <a href="http://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
+
+  <div>Project icon made by <a href="http://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
+  
+  <p>Paciently coded and crafted by: <a href="https://github.com/rsalgado">Roberto Salgado.</a> 2015.</p>
+</footer>
+
+
+<!-- Scripts -->
+<script src="js/app.js"></script>
+<script src="js/zepto.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
